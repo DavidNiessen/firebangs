@@ -1,8 +1,8 @@
 # Firebangs
-
-#### Browser extension that allows the use of DuckDuckGo's Bangs in other search engines
+Browser extension that allows the use of DuckDuckGo's Bangs in other search engines
 
 ### How does it work?
+
 Imagine you want to search for something on a site like Wikipedia. Instead of going to the side and entering
 the search query, you can do it all in one step with a simple "!" shortcut!
 
@@ -19,5 +19,6 @@ and replace the content of `assets/bangs.json` with it.
 This extension was tested on Chrome and Firefox.
 
 ### Important Links
-List with all Bangs: https://duckduckgo.com/bang 
+
+List with all Bangs: https://duckduckgo.com/bang<br>
 Bangs json: https://duckduckgo.com/bang.js
