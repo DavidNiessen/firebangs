@@ -4,7 +4,8 @@
   "description": "DuckDuckGo Bangs alternative for Firefox and Chrome",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:firefox": "web-ext build --artifacts-dir ./dist --overwrite-dest",
+    "sign:firefox": "web-ext sign --artifacts-dir dist --channel unlisted"
   },
   "keywords": [],
   "author": "David Nießen",

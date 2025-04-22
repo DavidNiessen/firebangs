@@ -11,6 +11,12 @@
     "webRequest",
     "activeTab"
   ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{a33dc1f3-fdc8-4050-8f2e-4f5675dfc723}"
+    }
+  },
+
   "host_permissions": [
     "*://www.google.com/search*",
     "*://www.google.ad/search*",
