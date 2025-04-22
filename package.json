@@ -1,0 +1,16 @@
+{
+  "name": "firebangs",
+  "version": "1.0.0",
+  "description": "DuckDuckGo Bangs alternative for Firefox and Chrome",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "David Nießen",
+  "license": "ISC",
+  "packageManager": "pnpm@10.4.1",
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
+}
