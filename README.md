@@ -3,7 +3,7 @@ Browser extension that allows the use of DuckDuckGo's Bangs in other search engi
 
 ### How does it work?
 
-Imagine you want to search for something on a site like Wikipedia. Instead of going to the side and entering
+Imagine you want to search for something on a site like Wikipedia. Instead of going to the site and entering
 the search query, you can do it all in one step with a simple "!" shortcut!
 
 For example, the query `!yt complete java course` resolves to `https://www.youtube.com/results?search_query=complete+java+course`
