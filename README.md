@@ -19,7 +19,7 @@ and replace the content of `assets/bangs.json` with it.
 **For Firefox:**<br>
 install the dist/*.xpi (signed) extension file
 
-**For Chrome:** TODO
+**For Chrome:** Install the dist/*.zip file
 
 ### Build/sign yourself
 
@@ -27,13 +27,13 @@ pnpm must be installed!<br>
 Run `pnpm install` to install all dependencies.<br>
 
 **For Firefox:**<br>
-To only build the extension, run `pnpm run build`.
+To only build the extension, run `pnpm run build:firefox`.
 Please note that unsigned extensions can only be installed temporarily<br>
 
 To sign it, you need to set the `WEB_EXT_API_KEY` and `WEB_EXT_API_SECRET` environment variables, 
-which you can get from your Mozilla account. After that, run `pnpm run sign`
+which you can get from your Mozilla account. After that, run `pnpm run sign:firefox`
 
-**For Chrome:** TODO
+**For Chrome:** For now, you can use `pnpm run build:firefox`
 
 ### Which browsers are supported?
 

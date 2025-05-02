@@ -2,26 +2,47 @@ import config from '../config.js'
 
 const bangsFilePath = '../assets/bangs.json'
 
-let bangs
-let indexes
+let data = {
+  bangs: null,
+  indexes: null,
+}
+let lastUpdated = null
 
-export const loadBangs = async (forceRefetch = false) => {
-  if (bangs && !forceRefetch) {
-    return { bangs, indexes }
+export const loadBangs = async () => {
+  const now = new Date()
+  if (
+    !data.bangs ||
+    !data.indexes ||
+    !lastUpdated ||
+    now.getTime() - lastUpdated.getTime() > config.updateAfterMs
+  ) {
+    let bangs
+    try {
+      bangs = await fetchBangs(config.remoteDataUrl)
+    } catch (error) {
+      console.warn('Failed to fetch remote bangs: ', error)
+      bangs = await fetchBangs(bangsFilePath)
+    }
+
+    if (bangs) {
+      data = {
+        bangs: bangs,
+        indexes: mapIndexes(bangs),
+      }
+      lastUpdated = now
+    }
   }
 
-  const url = config.fetchRemoteData ? config.fetchRemoteData : bangsFilePath
-
-  bangs = await fetchBangs(url)
-  indexes = mapIndexes(bangs)
-
-  return { bangs, indexes }
+  return data
 }
 
 export const fetchBangs = async (url) => {
+  console.log('ABC')
   const response = await fetch(url)
   if (!response.ok) {
-    throw new Error(`(${response.status} Failed to load Bangs from ${url}: ${response.statusText}`)
+    throw new Error(
+      `(${response.status} Failed to load Bangs from ${url}: ${response.statusText}`,
+    )
   }
 
   const json = await response.json()
@@ -33,4 +54,4 @@ export const fetchBangs = async (url) => {
   return json
 }
 
-const mapIndexes = (bangs) => bangs.map(bang => bang.t.toLowerCase())
+const mapIndexes = (bangs) => bangs.map((bang) => bang.t.toLowerCase())

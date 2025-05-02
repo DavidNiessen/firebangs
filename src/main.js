@@ -9,6 +9,8 @@ const REGEX = /!(\S+)/i
 const handler = async (details) => {
   const { bangs, indexes } = await loadBangs()
 
+  if (!bangs || !indexes) return
+
   const url = new URL(details.url)
   const params = url.searchParams
 

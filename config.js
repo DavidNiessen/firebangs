@@ -1,4 +1,4 @@
 export default {
-  fetchRemoteData: false,
-  remoteDataUrl: 'https://duckduckgo.com/bang.js'
+  remoteDataUrl: 'https://raw.githubusercontent.com/DavidNiessen/firebangs/refs/heads/main/assets/bangs.json',
+  updateAfterMs: 3_600_000
 }
