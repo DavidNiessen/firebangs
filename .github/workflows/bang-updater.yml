@@ -18,7 +18,7 @@ jobs:
 
       - name: Validate json
         run: |
-          if ! jq empty assets/data.json; then
+          if ! jq empty assets/bangs.json; then
             echo "❌ Invalid JSON. Aborting."
             exit 1
           fi  
