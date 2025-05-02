@@ -38,7 +38,7 @@ jobs:
         run: |
           git config user.name "${USERNAME}"
           git config user.email "${EMAIL}"
-          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}
           git remote -v
           git add assets/bangs.json
           git commit -m "[AUTOMATIC] Bang update workflow"
