@@ -23,6 +23,13 @@ jobs:
             exit 1
           fi  
 
+      - name: Check for changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes in data.json"
+            exit 0
+          fi     
+
       - name: Commit and push
         env:
           GITHUB_USERNAME: ${{ secrets.GH_USERNAME }}
