@@ -32,13 +32,13 @@ jobs:
 
       - name: Commit and push
         env:
-          GITHUB_USERNAME: ${{ secrets.GH_USERNAME }}
-          GITHUB_EMAIL: ${{ secrets.GH_EMAIL }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          USERNAME: ${{ secrets.GH_USERNAME }}
+          EMAIL: ${{ secrets.GH_EMAIL }}
+          TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config user.name "${GITHUB_USERNAME}"
-          git config user.email "${GITHUB_EMAIL}"
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          git config user.name "${USERNAME}"
+          git config user.email "${EMAIL}"
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
           git add assets/bangs.json
           git commit -m "[AUTOMATIC] Bang update workflow"
           git push
