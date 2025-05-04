@@ -1,4 +1,4 @@
-name: Bang updater
+name: Update Bangs
 
 on:
   schedule:
@@ -29,7 +29,7 @@ jobs:
         run: |
           if git diff --quiet; then
             echo "No changes in data.json"
-            exit 0
+            exit 78
           fi     
 
       - name: Commit and push
