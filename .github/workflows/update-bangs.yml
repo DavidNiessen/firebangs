@@ -56,11 +56,12 @@ jobs:
       - name: Check for differences
         id: diff-check
         run: |
-          if git diff --quiet; then
+          git add ${{ env.BANGS_FILE_PATH }}
+          if git diff --cached --quiet; then
             echo "data_changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "data_changed=true" >> "$GITHUB_OUTPUT"
-          fi 
+          fi
   
 
   push-changes:
