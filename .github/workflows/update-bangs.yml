@@ -8,6 +8,10 @@ on:
 env:
   BANGS_DOWNLOAD_URL: https://duckduckgo.com/bang.js
   BANGS_FILE_PATH: assets/bangs.json
+  BANGS_DIRECTORY: assets/
+
+permissions:
+  contents: write
 
 jobs:
   download-bangs:
@@ -30,6 +34,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
+          name: bangs
           path: ${{ env.BANGS_FILE_PATH }}
 
   diff-check:
@@ -45,7 +50,8 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          path: ${{ env.BANGS_FILE_PATH }}
+          name: bangs
+          path: ${{ env.BANGS_DIRECTORY }}
 
       - name: Check for differences
         id: diff-check
@@ -69,7 +75,8 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          path: ${{ env.BANGS_FILE_PATH }}
+          name: bangs
+          path: ${{ env.BANGS_DIRECTORY }}
 
       - name: Commit and push
         env:
