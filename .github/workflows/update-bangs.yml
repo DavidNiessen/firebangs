@@ -56,7 +56,7 @@ jobs:
             echo "data_changed=false" >> "$GITHUB_OUTPUT"
           fi 
   
-  
+
   push-changes:
     name: Push updated Bangs
     needs: diff-check
@@ -77,9 +77,9 @@ jobs:
           EMAIL: ${{ secrets.GH_EMAIL }}
           TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config user.name "${USERNAME}"
-          git config user.email "${EMAIL}"
-          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config user.name "${{ secrets.GH_USERNAME }}"
+          git config user.email "${{ secrets.GH_EMAIL }}"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
           git remote -v
           git add assets/bangs.json
           git commit -m "[AUTOMATIC] Bang update workflow"
