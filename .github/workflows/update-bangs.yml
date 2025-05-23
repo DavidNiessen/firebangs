@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download Bangs
-        run: curl -sSL ${{ env.BANGS_DOWNLOAD_URL }} ${{ env.BANGS_FILE_PATH }}
+        run: curl -sSL "${{ env.BANGS_DOWNLOAD_URL }}" -o "${{ env.BANGS_FILE_PATH }}"
 
       - name: Validate json
         run: |
