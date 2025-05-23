@@ -66,6 +66,7 @@ jobs:
   push-changes:
     name: Push updated Bangs
     needs: diff-check
+    if: needs.diff-check.outputs.data_changed == 'true'
     runs-on: ubuntu-latest
 
     steps:
