@@ -57,9 +57,9 @@ jobs:
         id: diff-check
         run: |
           if git diff --quiet; then
-            echo "data_changed=true" >> "$GITHUB_OUTPUT"
-          else
             echo "data_changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "data_changed=true" >> "$GITHUB_OUTPUT"
           fi 
   
 
