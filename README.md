@@ -14,6 +14,8 @@ All Bangs are currently loaded from `assets/bangs.json`.
 If you want the latest official Bangs, go to https://duckduckgo.com/bang.js
 and replace the content of `assets/bangs.json` with it.
 
+Note: This repository contains a workflow that automatically downloads and pushes the latest bangs.json from DuckDuckGo every day.
+
 ### Installation 
 
 **For Firefox:**<br>
