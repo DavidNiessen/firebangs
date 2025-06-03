@@ -10,6 +10,7 @@ env:
   BANGS_FILE_PATH: assets/bangs.json
   BANGS_DIRECTORY: assets/
   LOG_FILE_PATH: log.md
+  LOG_FILE_DIRECTORY: ./
 
 permissions:
   contents: write
@@ -85,7 +86,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: log
-          path: ${{ env.BANGS_DIRECTORY }}
+          path: ${{ env.LOG_FILE_DIRECTORY }}
 
       - name: Check for differences
         id: diff-check
@@ -118,7 +119,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: log
-          path: ${{ env.BANGS_DIRECTORY }}
+          path: ${{ env.LOG_FILE_DIRECTORY }}
 
       - name: Commit and push
         env:
