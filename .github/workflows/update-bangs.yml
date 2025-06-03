@@ -9,7 +9,7 @@ env:
   BANGS_DOWNLOAD_URL: https://duckduckgo.com/bang.js
   BANGS_FILE_PATH: assets/bangs.json
   BANGS_DIRECTORY: assets/
-  LOG_FILE_PATH: assets/log.md
+  LOG_FILE_PATH: log.md
 
 permissions:
   contents: write
