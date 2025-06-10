@@ -37,7 +37,6 @@ export const loadBangs = async () => {
 }
 
 export const fetchBangs = async (url) => {
-  console.log('ABC')
   const response = await fetch(url)
   if (!response.ok) {
     throw new Error(
