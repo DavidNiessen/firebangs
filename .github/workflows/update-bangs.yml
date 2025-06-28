@@ -123,14 +123,8 @@ jobs:
 
       - name: Commit and push
         env:
-          USERNAME: ${{ secrets.GH_USERNAME }}
-          EMAIL: ${{ secrets.GH_EMAIL }}
-          TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config user.name "${{ secrets.GH_USERNAME }}"
-          git config user.email "${{ secrets.GH_EMAIL }}"
-          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
-          git remote -v
           git add ${{ env.BANGS_FILE_PATH }} ${{ env.LOG_FILE_PATH }}
-          git commit -m "[AUTOMATIC] Bang update workflow"
+          git commit -m "Bang update workflow"
           git push
